@@ -10,6 +10,9 @@ app.use(express.static('public'));
 var email, userid, resp;
 const port = 3000;
 
+config.APIKey = process.env.APIKey || config.APIKey;
+config.APISecret = process.env.APISecret || config.APISecret;
+
 //Use the ApiKey and APISecret from config.js
 function makeToken() {
     const payload = {
